@@ -1,0 +1,325 @@
+  :root {
+        --bg: #0b0d10;
+        --card-bg: rgba(19, 23, 31, 0.7);
+        /* --- COLOR CHANGE: GREEN TO RED --- */
+        --accent: #ef4444; /* Vibrant Red Accent */
+        --text: #f3f4f6;
+        --text-muted: #9ca3af;
+        --border: rgba(255, 255, 255, 0.1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Space Grotesk", sans-serif;
+      }
+
+      body {
+        background-color: var(--bg);
+        color: var(--text);
+        overflow-x: hidden;
+      }
+
+   .cursor{
+    position:fixed;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:#ff2a2a;
+    pointer-events:none;
+    z-index:99999;
+    box-shadow:
+        0 0 15px #ff0000,
+        0 0 35px #ff0000;
+    transform:translate(-50%,-50%);
+}
+
+#smoke-container{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:99998;
+}
+
+.smoke{
+    position:absolute;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:#ff0000;
+    filter:blur(10px);
+    transform:translate(-50%,-50%);
+}
+      /* Three.js Background Canvas */
+      #webgl-canvas {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        z-index: 0;
+        pointer-events: none;
+      }
+
+      /* Content Wrapper */
+      main,
+      header,
+      footer {
+        position: relative;
+        z-index: 1;
+      }
+
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 2rem 5%;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(11, 13, 16, 0.6);
+        backdrop-filter: blur(12px);
+        z-index: 100;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .logo {
+        font-weight: 700;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+      }
+
+      .logo span {
+        color: var(--accent);
+      }
+
+      nav a {
+        color: var(--text-muted);
+        text-decoration: none;
+        margin-left: 2rem;
+        transition: color 0.3s ease;
+        font-size: 0.95rem;
+      }
+
+      nav a:hover {
+        color: var(--accent);
+      }
+
+      section {
+        padding: 8rem 5% 4rem;
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* Hero Section */
+      .hero {
+        max-width: 100%;
+        /* background-color: red; */
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        /* --- COLOR CHANGE: GREEN BG TO RED BG --- */
+        background:green;
+        color: var(--text);
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.85rem;
+        width: fit-content;
+        margin-bottom: 1.5rem;
+        /* --- COLOR CHANGE: GREEN BORDER TO RED BORDER --- */
+        border: 1px solid rgba(239, 68, 68, 0.2);
+      }
+
+      .badge-dot {
+        width: 8px;
+        height: 8px;
+        background: var(--text);
+        border-radius: 50%;
+      }
+
+      h1 {
+        font-size: clamp(2.5rem, 6vw, 5rem);
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        text-align: center;
+      }
+
+      h1 span {
+        color: var(--accent);
+      }
+
+      .hero p {
+        font-size: 1.25rem;
+        color: var(--text-muted);
+        max-width: 600px;
+        margin-bottom: 2rem;
+        text-align: center;
+      }
+
+      .cta-buttons {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .btn {
+        padding: 0.8rem 1.8rem;
+        border-radius: 6px;
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        border: none;
+      }
+
+      .btn-primary {
+        background-color: var(--accent);
+        color: #fff; /* White text looks better on red primary btn */
+      }
+
+      .btn-primary:hover {
+        /* --- COLOR CHANGE: GREEN SHADOW TO RED SHADOW --- */
+        box-shadow: 0 0 20px rgba(239, 68, 68, 0.4);
+        transform: translateY(-2px);
+      }
+
+      /* About Section */
+      .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 4rem;
+        align-items: center;
+        margin-top: 3rem;
+      }
+
+      @media (max-width: 768px) {
+        .about-content {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* --- ADDED IMAGE CONTAINER --- */
+      .about-image {
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        border: 1px solid var(--border);
+      }
+
+      .about-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.5s ease;
+      }
+
+      .about-image:hover img {
+        transform: scale(1.05);
+      }
+
+      .about-text p {
+        color: var(--text-muted);
+        font-size: 1.1rem;
+        margin-bottom: 1.5rem;
+        max-width: 700px;
+      }
+
+      /* Contact Section Layout */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 2fr;
+        gap: 3rem;
+        margin-top: 2rem;
+      }
+
+      @media (max-width: 768px) {
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      .contact-info {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+      }
+
+      .info-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        padding: 1.5rem;
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+      }
+
+      .info-card span {
+        display: block;
+        color: var(--text-muted);
+        font-size: 0.85rem;
+        margin-bottom: 0.25rem;
+      }
+
+      .info-card a,
+      .info-card b {
+        color: var(--text);
+        font-size: 1.1rem;
+        text-decoration: none;
+      }
+
+      /* Form Styling */
+      .contact-form {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        padding: 2rem;
+        border-radius: 12px;
+        backdrop-filter: blur(10px);
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .form-group label {
+        font-size: 0.85rem;
+        color: var(--text-muted);
+      }
+
+      .form-group input,
+      .form-group textarea {
+        background: rgba(0, 0, 0, 0.4);
+        border: 1px solid var(--border);
+        padding: 0.8rem;
+        border-radius: 6px;
+        color: var(--text);
+        outline: none;
+        transition: border-color 0.3s ease;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: var(--accent);
+      }
+
+      #form-status {
+        font-size: 0.9rem;
+        margin-top: 0.5rem;
+      }
+
+      footer {
+        text-align: center;
+        padding: 3rem 5%;
+        border-top: 1px solid var(--border);
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }

@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.css"
+    />
+    <title>Atish Tigga - Web Developer</title>
+  </head>
+  <body>
+    <div class="cursor"></div>
+
+    <div id="smoke-container"></div>
+
+    <!-- Three.js Interactive Background Canvas -->
+    <canvas id="webgl-canvas"></canvas>
+
+    <header>
+      <div class="logo">ATISH<span>.</span></div>
+      <nav>
+        <a href="#hero">Home</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section id="hero" class="hero">
+        <div class="badge animate-gsap">
+          <span class="badge-dot"></span> Available for freelance work
+        </div>
+        <h1 class="animate-gsap">HI, I'M<br /><span>ATISH TIGGA</span></h1>
+        <p class="animate-gsap">
+          I design and build immersive, animated web experiences that feel fast,
+          cinematic, and unmistakably premium.
+        </p>
+        <div class="cta-buttons animate-gsap">
+          <a href="#contact" class="btn btn-primary">Let's Talk</a>
+        </div>
+      </section>
+
+      <!-- About Section -->
+      <section id="about">
+        <h2 style="font-size: 2.5rem; margin-bottom: 2rem" class="animate-gsap">
+          A Little About <span style="color: var(--accent)">Me</span>
+        </h2>
+
+        <div class="about-content">
+          <!-- --- ADDED IMAGE --- -->
+          <div class="about-image animate-gsap">
+            <img src="image.png" alt="Atish Tigga" />
+          </div>
+
+          <div class="about-text animate-gsap">
+            <p>
+              Hello! I'm Atish, a passionate Creative Developer based in India.
+              I specialize in merging design principles with powerful
+              technologies to craft memorable digital experiences.
+            </p>
+            <p>
+              My toolkit includes HTML, CSS, JavaScript, and I love utilizing
+              powerful animation libraries like GSAP to bring interfaces to
+              life. I am also enthusiastic about exploring 3D on the web using
+              Three.js.
+            </p>
+            <p>
+              I focus on creating sleek, performant, and accessible interfaces,
+              ensuring every detail contributes to a seamless user journey.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Contact Section -->
+      <section id="contact">
+        <h2
+          style="font-size: 2.5rem; margin-bottom: 2rem; text-align: center"
+          class="animate-gsap"
+        >
+          Let's build something<br /><span style="color: var(--accent)"
+            >worth remembering.</span
+          >
+        </h2>
+
+        <div class="contact-grid">
+          <!-- Contact Direct Details -->
+          <div class="contact-info animate-gsap">
+            <div class="info-card">
+              <span>Email</span>
+              <a href="mailto:atishtigga63@gmail.com">atishtigga63@gmail.com</a>
+            </div>
+            <div class="info-card">
+              <span>Phone</span>
+              <a href="tel:+918798934503">+91 9339135609</a>
+            </div>
+            <div class="info-card">
+              <span>Address</span>
+              <b>Siliguri, West Bengal, India</b>
+            </div>
+            <div class="info-card">
+              <span>GitHub</span>
+              <a href="https://github.com/WebDevAT609" target="_blank"
+                >github.com/WebDevAT609</a
+              >
+            </div>
+          </div>
+
+          <!-- Contact Form using EmailJS -->
+          <form id="contact-form" class="contact-form animate-gsap">
+            <div class="form-group">
+              <label for="user_name">Name</label>
+              <input
+                type="text"
+                id="user_name"
+                name="user_name"
+                placeholder="Your Name"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="user_email">Email</label>
+              <input
+                type="email"
+                id="user_email"
+                name="user_email"
+                placeholder="your@email.com"
+                required
+              />
+            </div>
+            <div class="form-group">
+              <label for="user_message">Message</label>
+              <textarea
+                id="user_message"
+                name="user_message"
+                rows="5"
+                placeholder="Tell me about your project..."
+                required
+              ></textarea>
+            </div>
+            <button type="submit" id="submit-btn" class="btn btn-primary">
+              Send Message
+            </button>
+            <div id="form-status"></div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>© Atish Tigga. Crafted with motion.</p>
+    </footer>
+
+    <!-- Libraries: Three.js, GSAP + ScrollTrigger, Lenis, EmailJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
